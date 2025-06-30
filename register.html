@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Nike Store</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <input type="text" id="regUsername" placeholder="Choose Username" required><br><br>
+      <input type="password" id="regPassword" placeholder="Choose Password" required><br><br>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("regUsername").value;
+      const password = document.getElementById("regPassword").value;
+
+      // Save in localStorage
+      localStorage.setItem("username", username);
+      localStorage.setItem("password", password);
+
+      alert("Account created successfully! Now login.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
